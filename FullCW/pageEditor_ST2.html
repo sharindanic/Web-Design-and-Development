@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page editor</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row-reverse;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        main {
+            flex: 3;
+        }
+        aside {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-right: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #fafafa;
+        }
+
+        aside a {
+            text-decoration: none;
+        }
+
+        aside li {
+            padding-bottom: 4px;
+        }
+
+        .stud {
+            text-align: center;
+            padding: 20px;
+            background-color: #f2f2f2;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+        .page-title {
+            text-align: center;
+            padding: 20px;
+            background-color: #f2f2f2;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        .top {
+            position: fixed;
+            bottom: 5%;
+            right: 5%;
+        }
+
+        .top a {
+            padding: 10px 20px; /* Adds padding for button-like feel */
+            background-color: #007bff; /* Button color */
+            color: white; /* Text color */
+            text-decoration: none; /* Removes underline */
+            border-radius: 20px; /* Rounds the corners */
+            font-size: 12px; /* Adjust font size */
+            font-weight: bold; /* Make the text stand out */
+        }
+
+        .top a:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        }
+        .container img {
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar" arial-label="Main Navigation">
+            <div class="logo">
+                Educa
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="content.html">Content</a></li>
+                <li><a href="table.html">Progress and Initiatives</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+                <li><a href="profile.html">User Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Our Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-title">
+        <h1> Sudam Pabasara - Editor's Page</h1>
+    </section>
+
+    <div class="container">
+        <main>
+            <section>
+                <h2 id="home">Home Page</h2><br>
+                <h3> Technical Description </h3><br>
+                <p> The Home Page for the Educa platform is designed to provide users with an engaging and informative introduction to the platform. It features a full-screen background video with an overlay, a centered content section with the platform's name, tagline, and a brief description of its mission. The page also includes quick links to key sections of the website, such as Volunteer Programs, Feedback, and Our Team. The design is responsive, ensuring a seamless experience across devices. The color scheme and typography are consistent with the platform's branding, creating a visually appealing and user-friendly interface. </p><br>
+
+                <h3> Accessibility </h3><br>
+                <p> Accessibility in the Home Page is ensured through the use of semantic HTML elements like "header", "section", and "nav", which improve screen reader compatibility. The background video is muted and looped to avoid distractions, and the overlay ensures readability of the text. The quick links are designed with clear labels and hover effects, making them easy to navigate for all users. The responsive design ensures that the page is accessible on various devices and screen sizes. </p><br>
+
+                <h3>To go for the validation page</h3><br>
+                <p><a href="validation_ST2.html">Link for the validation page</a></p><br>
+
+                <h3>To go for the Home Page</h3><br>
+                <p><a href="home.html">Link for the Home Page</a></p><br>
+            </section>
+
+            <section>
+                <h2 id="table">Table Page</h2><br>
+                <h3> Technical Description </h3><br>
+                <p> The Table Page for Educa is designed to present detailed information about the progress and initiatives related to Quality Education (SDG 4) across different countries. The page features a responsive table with columns for Country/Region, Flag, Literacy Rate, School Enrollment, Government Budget Allocation, Notable Initiatives, Impact, and Major Challenges. The table is styled with alternating row colors for better readability and includes hover effects for enhanced user interaction. The page also includes a sticky navigation bar and a footer with quick links and contact information. The design is clean and organized, making it easy for users to find and understand the data. </p><br>
+
+                <h3> Accessibility </h3><br>
+                <p> Accessibility in the Table Page is ensured through the use of semantic HTML elements like "table", "thead", and "tbody", which improve screen reader navigation. The table includes descriptive headers and alt text for images, making it accessible to visually impaired users. The responsive design ensures that the table is accessible on various devices, and the hover effects provide visual feedback for interactive elements. </p><br>
+
+                <h3> To go for the validation page </h3><br>
+                <p><a href="validation_ST2.html">Link for the validation page</a></p><br>
+
+                <h3> To go for the Table Page</h3><br>
+                <p><a href="table.html">Link for the Table Page</a></p><br>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page</h2><br>
+                <h3> Technical Description </h3><br>
+                <p> The Content Page for Educa is designed to provide comprehensive information about Sustainable Development Goals (SDGs), with a particular focus on SDG 4: Quality Education. The page is structured using HTML and CSS, ensuring a clean and responsive layout. The navigation bar at the top allows users to easily access different sections of the website, while the sidebar provides quick links to specific parts of the content page. The main content area is divided into sections, each addressing different aspects of SDGs and SDG 4, such as their importance, targets, challenges, and global progress. The page also includes images to enhance visual appeal and understanding. A "Back to Top" button is provided for user convenience, allowing easy navigation to the top of the page. The footer contains essential links, contact information, and social media icons, along with links to the page editor profiles of the students involved in the project. This page is optimized for readability and accessibility, ensuring a seamless user experience. </p><br>
+
+                <h3> Accessibility </h3><br>
+                <p> Accessibility in the Content Page is addressed through semantic HTML elements like "header", "section", and "aside", which improve screen reader navigation. The use of descriptive "alt" text for images and clear headings ensures content is accessible to visually impaired users. Additionally, the responsive design and high-contrast color scheme enhance readability and usability across devices. The "Back to Top" button further improves navigation for all users. </p><br>
+
+                <h3> To go for the validation page </h3><br>
+                <p><a href="validation_ST2.html"> Link for the validation page </a></p><br>
+
+                <h3> To go for the Content Page</h3><br>
+                <p><a href="content.html">Link for the Content Page</a></p><br>
+            </section>
+
+            <section>
+                <h2 id="challenge">Challenges and Lessons Learned</h2><br>
+                <p> During the implementation of the Home Page, Table Page, and Content Page, several challenges were encountered. For the Home Page, ensuring a smooth and engaging user experience with the background video required careful optimization to avoid performance issues. The Table Page faced challenges in organizing large amounts of data in a responsive and accessible manner, which was resolved using CSS flexbox and semantic HTML. The Content Page struggled with maintaining a balance between detailed information and readability, which was addressed through clear sectioning and the use of a sticky sidebar for navigation. These challenges emphasized the importance of mobile-first design, accessibility, and thorough testing, providing valuable lessons in creating user-friendly and inclusive web pages. </p><br>
+            </section>
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+            <ul class="top-level-ul">
+                <li>Student 2</li>
+                <ul>
+                    <li><a href="#home">Home Page</a></li>
+                    <li><a href="#table">Table Page</a></li>
+                    <li><a href="#content">Content Page</a></li>
+                </ul>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="educa_img_video/Educa.png" alt="Educa Logo" width="100">
+                <p>Educa - Education for Everyone</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="content.html">Content</a></li>
+                    <li><a href="table.html">Progress and Initiatives</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="profile.html">User Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@educa.com</p>
+                <p>Phone: +123 456 789</p>
+                <p>Location: 123 Education St, City</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><img src="educa_img_video/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="educa_img_video/x-icon.png" alt="X"></a>
+                <a href="#"><img src="educa_img_video/whatsapp-icon.png" alt="Whatsapp"></a>
+            </div>
+            <div class="footer-editor">
+                <h3>Page Editor</h3>
+                <a href="pageEditor_ST2.html">Sudam Pabasara</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Educa. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

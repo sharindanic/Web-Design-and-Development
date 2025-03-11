@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educa - Sitemap</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .sitemap-section {
+            padding: 40px 20px;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .sitemap {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .node {
+            fill: #2a9d8f;
+            stroke: #fff;
+            stroke-width: 2px;
+            cursor: pointer;
+            transition: fill 0.3s ease;
+        }
+
+        .node:hover {
+            fill: #f80606;
+        }
+
+        .node-text {
+            fill: #f5f8ef;
+            font-size: 14px;
+            text-anchor: middle;
+            dominant-baseline: middle;
+            cursor: pointer;
+        }
+
+        .line {
+            stroke: #000303;
+            stroke-width: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar" aria-label="Main Navigation">
+            <div class="logo">Educa</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="content.html">Content</a></li>
+                <li><a href="table.html">Progress and Initiatives</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+                <li><a href="profile.html">User Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Our Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="sitemap-section">
+        <h1>Educa Sitemap</h1>
+        <svg class="sitemap" viewBox="0 0 1000 600">
+            <circle class="node" cx="400" cy="50" r="40" data-link="home.html"></circle>
+            <text class="node-text" x="400" y="50">Home</text>
+            
+            <rect class="node" x="50" y="200" width="100" height="50" data-link="content.html"></rect>
+            <text class="node-text" x="100" y="225">Content</text>
+            
+            <rect class="node" x="200" y="200" width="100" height="50" data-link="volunteer.html"></rect>
+            <text class="node-text" x="250" y="225">Volunteer</text>
+            
+            <rect class="node" x="350" y="200" width="150" height="50" data-link="table.html"></rect>
+            <text class="node-text" x="425" y="225">Progress & Initiatives</text>
+            
+            <rect class="node" x="550" y="200" width="120" height="50" data-link="profile.html"></rect>
+            <text class="node-text" x="610" y="225">User Profile</text>
+            
+            <rect class="node" x="700" y="200" width="100" height="50" data-link="feedback.html"></rect>
+            <text class="node-text" x="750" y="225">Feedback</text>
+            
+            <rect class="node" x="820" y="200" width="100" height="50" data-link="team.html"></rect>
+            <text class="node-text" x="870" y="225">Our Team</text>
+            
+            <line class="line" x1="400" y1="90" x2="100" y2="200" />
+            <line class="line" x1="400" y1="90" x2="250" y2="200" />
+            <line class="line" x1="400" y1="90" x2="425" y2="200" />
+            <line class="line" x1="400" y1="90" x2="610" y2="200" />
+            <line class="line" x1="400" y1="90" x2="750" y2="200" />
+            <line class="line" x1="400" y1="90" x2="870" y2="200" />
+        </svg>
+    </section>
+    
+    <script>
+        document.querySelectorAll('.node').forEach(node => {
+            node.addEventListener('click', () => {
+                const link = node.getAttribute('data-link');
+                if (link) {
+                    window.open(link, '_blank');
+                }
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="educa_img_video/Educa.png" alt="Educa Logo" width="100">
+                <p>Educa - Education for Everyone</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="content.html">Content</a></li>
+                    <li><a href="table.html">Progress and Initiatives</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="profile.html">User Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@educa.com</p>
+                <p>Phone: +123 456 789</p>
+                <p>Location: 123 Education St, City</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><img src="educa_img_video/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="educa_img_video/x-icon.png" alt="X"></a>
+                <a href="#"><img src="educa_img_video/whatsapp-icon.png" alt="Whatsapp"></a>
+            </div>
+            <div class="footer-editor">
+                <h3>Page Editor</h3>
+                <a href="pageEditor_ST4.html">Indumina Rathnayaka</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Educa. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

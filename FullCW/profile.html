@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+    
+        body {
+            background-color: #f4f4f4; /* Match the background color of table.html */
+            padding: 20px;
+        }
+    
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+    
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Match the shadow from table.html */
+        }
+    
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white; /* Match the background color of table.html */
+            color: black;
+        }
+    
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #ddd;
+        }
+    
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+        .profile-picture input {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 2;
+        }
+    
+        .upload-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            text-align: center;
+            padding: 5px;
+            font-size: 12px;
+        }
+    
+        .profile-picture:hover .upload-label {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    
+        .name-input {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            width: 100%;
+            background: transparent;
+            border: 2px none;
+            color: black; /* Match the text color of table.html */
+            outline: none;
+        }
+    
+        .short-bio {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: black; /* Match the text color of table.html */
+            outline: none;
+            resize: none;
+        }
+    
+        .profile-detail {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+    
+        .profile-detail span:first-child {
+            font-weight: bold;
+        }
+    
+        .profile-detail input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #ddd; /* Match the border color of table.html */
+            color: black; /* Match the text color of table.html */
+            text-align: right;
+            outline: none;
+        }
+    
+        .quote-section {
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+    
+        .quote-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: black; /* Match the text color of table.html */
+            outline: none;
+            text-align: center;
+            font-style: italic;
+        }
+    
+        /* Goals Section */
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+    
+        .icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    
+        .goals-list, .experience-list, .frustrations-list {
+            padding-left: 20px;
+        }
+    
+        .goals-list li, .experience-list li, .frustrations-list li {
+            margin-bottom: 10px;
+        }
+    
+        .goals-list input, .experience-list input, .frustrations-list input {
+            width: 90%;
+            border: none;
+            border-bottom: 1px solid #ddd; /* Match the border color of table.html */
+            outline: none;
+            padding: 5px;
+        }
+    
+        /* Skills Section */
+        .skills-section {
+            padding: 20px;
+        }
+    
+        .skill-bar {
+            margin-bottom: 15px;
+        }
+    
+        .skill-name {
+            margin-bottom: 5px;
+        }
+    
+        .skill-name input {
+            border: none;
+            outline: none;
+            font-weight: bold;
+        }
+    
+        .skill-level {
+            height: 15px;
+            background-color: #e0e0e0; /* Match the background color of table.html */
+            border-radius: 10px;
+            position: relative;
+        }
+    
+        .skill-percentage {
+            height: 100%;
+            background-color: #2a9d8f; /* Match the primary color of table.html */
+            border-radius: 10px;
+            position: relative;
+        }
+    
+        .skill-percentage input {
+            width: 50px;
+            position: absolute;
+            right: -60px;
+            top: -3px;
+            border: none;
+            outline: none;
+        }
+    
+        /* UN Goals Section */
+        .un-goals {
+            text-align: center;
+            background-color: white; /* Match the background color of table.html */
+            color: black; /* Match the text color of table.html */
+        }
+    
+        .un-goals-title {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+    
+        .un-goals-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+    
+        .un-goal-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        .un-goal-icon.selected {
+            border: 3px solid yellow;
+        }
+    
+        /* Contact Form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .contact-form input, .contact-form textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd; /* Match the border color of table.html */
+            border-radius: 5px;
+            outline: none;
+        }
+    
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+    
+        .contact-form button {
+            padding: 10px;
+            background-color: #2a9d8f; /* Match the primary color of table.html */
+            color: white; /* Match the text color of table.html */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+    
+        /* Calendar */
+        .datetime-form {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .datetime-form input, .contact-form textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd; /* Match the border color of table.html */
+            border-radius: 5px;
+            outline: none;
+        }
+    
+        .datetime-form textarea {
+            resize: vertical;
+            min-height: 20px;
+        }
+    
+        .datetime-form button {
+            padding: 10px;
+            background-color: #2a9d8f; /* Match the primary color of table.html */
+            color: white; /* Match the text color of table.html */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+    
+        /* Contact Details Table */
+        .contact-details {
+            grid-column: span 2;
+        }
+    
+        .contact-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+    
+        .contact-table th, .contact-table td {
+            padding: 10px;
+            border: 1px solid #ddd; /* Match the border color of table.html */
+            text-align: left;
+        }
+    
+        .contact-table th {
+            background-color: #f5f5f5; /* Match the background color of table.html */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar" aria-label="Main Navigation">
+            <div class="logo">Educa</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="content.html">Content</a></li>
+                <li><a href="table.html">Progress and Initiatives</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+                <li><a href="profile.html">User Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Our Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="profile-container">
+        <!-- Profile Section -->
+        <div class="card profile-section">
+            <div class="profile-picture">
+                <img id="profile-img" src="educa_img_video/profile.png" alt="Profile Picture">
+                <input type="file" id="profile-upload" accept="image/*">
+                <div class="upload-label">Upload photo</div>
+            </div>
+            <input type="text" class="name-input" placeholder="Your Name">
+            <textarea class="short-bio" placeholder="Write a short bio about yourself"></textarea>
+            
+            <div class="profile-detail">
+                <span>Age:</span>
+                <input type="text" placeholder="Your age">
+            </div>
+            <div class="profile-detail">
+                <span>Work:</span>
+                <input type="text" placeholder="Your profession">
+            </div>
+            <div class="profile-detail">
+                <span>Family:</span>
+                <input type="text" placeholder="Family status">
+            </div>
+            <div class="profile-detail">
+                <span>Location:</span>
+                <input type="text" placeholder="Your location">
+            </div>
+            
+            <div class="quote-section">
+                <input type="text" class="quote-input" placeholder="A quote that captures your personality">
+            </div>
+        </div>
+
+        <!-- Goals input -->
+        <div class="card">
+            <div class="section-header">
+                <div class="icon">
+                    <img src="educa_img_video/goals.png" alt="Goals Icon">
+                    
+                </div>
+                <h2>Goals</h2>
+            </div>
+            <ul class="goals-list">
+                <li>Goals 1: <input type="text" placeholder="Add your goal here"></li>
+                <li>Goals 2: <input type="text" placeholder="Add your goal here"></li>
+                <li>Goals 3: <input type="text" placeholder="Add your goal here"></li>
+                <li>Goals 4: <input type="text" placeholder="Add your goal here"></li>
+            </ul>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="card skills-section">
+            
+                <h2>Skills</h2>
+                
+            
+            
+            <div class="skill-bar">
+                <div class="skill-name">
+                    <input type="text" value="Communication" placeholder="Skill name">
+                </div>
+                <div class="skill-level">
+                    <div class="skill-percentage" style="width: 80%">
+                        <input type="number" value="70" min="0" max="100"> %
+                    </div>
+                </div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-name">
+                    <input type="text" value="Leadership" placeholder="Skill name">
+                </div>
+                <div class="skill-level">
+                    <div class="skill-percentage" style="width: 70%">
+                        <input type="number" value="65" min="0" max="100"> %
+                    </div>
+                </div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-name">
+                    <input type="text" value="Teamwork" placeholder="Skill name">
+                </div>
+                <div class="skill-level">
+                    <div class="skill-percentage" style="width: 90%">
+                        <input type="number" value="80" min="0" max="100"> %
+                    </div>
+                </div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-name">
+                    <input type="text" value="Innovation" placeholder="Skill name">
+                </div>
+                <div class="skill-level">
+                    <div class="skill-percentage" style="width: 65%">
+                        <input type="number" value="60" min="0" max="100"> %
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Frustrations Section -->
+        <div class="card">
+            <div class="section-header">
+                <div class="icon">
+                    <img src="educa_img_video/images (1).png" alt="Frustrations Icon">
+                </div>
+                <h2>Frustrations</h2>
+            </div>
+            <ul class="frustrations-list">
+                <li><input type="text" placeholder="Add frustration here"></li>
+                <li><input type="text" placeholder="Add frustration here"></li>
+            </ul>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="card">
+            <div class="section-header">
+                <div class="icon">
+                    <img src="educa_img_video/3135729.png" alt="Experience Icon">
+                </div>
+                <h2>Experience</h2>
+            </div>
+            <ul class="experience-list">
+                <li>Brief Description: <input type="text" placeholder="Add experience here"></li>
+                <li>Text Here: <input type="text" placeholder="Add details here"></li>
+                <li>Text Here: <input type="text" placeholder="Add details here"></li>
+            </ul>
+        </div>
+
+        <!-- UN Goals Section -->
+        <div class="card un-goals">
+            <div class="un-goals-title">UN goals I support</div>
+            <div class="un-goals-icons">
+                <img src="educa_img_video/SDG-goals-01.png" class="un-goal-icon" alt="SDG Goal 1">
+                <img src="educa_img_video/Un_2.png" class="un-goal-icon" alt="SDG Goal 2">
+                <img src="educa_img_video/un-5.png" class="un-goal-icon" alt="SDG Goal 3">
+                <img src="educa_img_video/UN-13.png" class="un-goal-icon" alt="SDG Goal 4">
+                <img src="educa_img_video/UN-16.png" class="un-goal-icon" alt="SDG Goal 5">
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="card">
+            <div class="section-header">
+                <div class="icon">
+                    <img src="educa_img_video/contactme.png" alt="Contact Icon">
+                </div>
+                <h2>Contact me</h2>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <h2>Contact Details</h2>
+            <table class="contact-table">
+                <tr>
+                    <th>Contact Method</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>imashaindumina1234@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>+94-771010865</td>
+                </tr>
+                <tr>
+                <td>Address</td>
+                    <td>123/1 Main Street, Matara.</td>
+                </tr>
+                <tr>
+                    <td>LinkedIn</td>
+                    <td>linkedin.com/in/imashaindumina</td>
+                </tr>
+                <tr>
+                    <td>Twitter</td>
+                    <td>@imashaindumina</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="card">
+            <div class="section-header">
+                <div class="icon">
+                    <img src="educa_img_video/images (2).png" alt="Volunteering Icon">
+                </div>
+                <h2>Volunteering availability</h2>
+            </div>
+            <form class="datetime-form">
+                <input type="text" placeholder="date">
+                <input type="email" placeholder="time">
+                <textarea placeholder="place"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+        
+    <script>
+        // JavaScript for profile image upload
+        document.getElementById('profile-upload').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-img').src = e.target.result;
+                }
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+
+        // JavaScript for skill percentage adjustment
+        document.querySelectorAll('.skill-percentage input').forEach(input => {
+            input.addEventListener('input', function() {
+                const percentage = this.value;
+                if (percentage >= 0 && percentage <= 100) {
+                    this.parentElement.style.width = percentage + '%';
+                }
+            });
+        });
+
+        // JavaScript for UN goals selection
+        document.querySelectorAll('.un-goal-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                this.classList.toggle('selected');
+            });
+        });
+    </script>
+              <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="educa_img_video/Educa.png" alt="Educa Logo" width="100">
+                <p>Educa - Education for Everyone</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="content.html">Content</a></li>
+                    <li><a href="table.html">Progress and Initiatives</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="profile.html">User Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@educa.com</p>
+                <p>Phone: +123 456 789</p>
+                <p>Location: 123 Education St, City</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><img src="educa_img_video/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="educa_img_video/x-icon.png" alt="X"></a>
+                <a href="#"><img src="educa_img_video/whatsapp-icon.png" alt="Whatsapp"></a>
+            </div>
+            <div class="footer-editor">
+                <h3>Page Editor</h3>
+                <a href="pageEditor_ST4.html">Indumina Rathnayaka</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Educa. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

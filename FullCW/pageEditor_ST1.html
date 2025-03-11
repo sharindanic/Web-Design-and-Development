@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Page editor</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+	.container {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+main {
+    flex: 3;
+}
+aside {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-right: 20px;
+}
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+}
+
+aside a{
+    text-decoration : none;
+}
+
+aside li{
+    padding-bottom: 4px;
+}
+
+.stud {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+    font-size: 24px;
+	font-weight: bold;
+    margin-top: 0;
+}
+.page-title {
+	text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+    font-size: 24px;
+	font-weight: bold;
+    margin-top: 0;
+}
+	
+	
+
+.top {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+}
+        
+.top a {
+    padding: 10px 20px; /* Adds padding for button-like feel */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline */
+    border-radius: 20px; /* Rounds the corners */
+    font-size: 12px; /* Adjust font size */
+    font-weight: bold; /* Make the text stand out */
+}
+
+.top a:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+.container img{
+    width: 90%;
+}
+	</style>
+
+</head>
+<body>
+    <header>
+	    <nav class="navbar" arial-label="Main Navigation">
+		    <div class="logo">
+			     Educa
+		    </div>
+			<ul class="nav-links">
+			    <li><a href="home.html">Home</a></li>
+                <li><a href="content.html">Content</a></li>
+                <li><a href="table.html">Progress and Initiatives</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+                <li><a href="profile.html">User Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Our Team</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+    <section class="page-title">
+	   <h1> Satkunam Kriththigan - Editor's Page</h1>
+	</section>
+	
+	<div class="container">
+	   <main>
+	        <section>
+			    <h2 id="splash">Splash Page</h2><br>
+				    <h3> Technical Description </h3><br>
+					    <p> The Splash Screen for the Educa platform is designed using HTML and CSS to provide an 
+						engaging and informative introduction, featuring a centered content section with a header, a mission
+						statement focused on SDG 4: Quality Education, and a list of members. The design includes a full-screen background image,
+						a semi-transparent white overlay for readability, and a loading animation to indicate an automatic redirection to the home page 
+						after 4 seconds. The color scheme, with teal, coral and dark blue accents, ensures visual consistency and alignment with the 
+						platform's branding. The responsive layout and clean typography enhance user experience, making the Splash Screen both functional
+						and visually appealing. </p><br>
+						
+					<h3> Accessibility </h3><br>
+					    <p> Accessibility in this page is ensured through semantic HTML elements like "header", "h1" and "u1" which improve screen reader compatibility.The color scheme provides sufficient contrast for readability, and the responsive design ensures usability across devices. Additionally, the loading animation offers visual feedback during redirection, enhancing the experience for all users.</p>
+						<br>
+					<h3>To go for the validation page</h3><br> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST1.html">Link for the validation page</a></p> 
+						<br>
+					<h3>To go for the Splash page</h3><br>
+                        <p><a href="splash.html">Link for the splash page.</a></p><br>
+            </section>
+			
+			<section>
+			    <h2 id="volunteer">Volunteer Page</h2><br>
+				    <h3> Technical Description  </h3><br>
+					    <p> The Volunteer page for Educa is designed to provide users with an interactive and engaging platform to explore and join various volunteer programs. 
+						The page features a clean and organized layout with a dropdown menu for sorting programs by popularity, recency, ratings, or alphabetical order. 
+						Volunteer opportunities, such as tutoring, library support, mentoring, and workshops, are presented in scrollable cards with images, descriptions, and join buttons.
+						User ratings and reviews are prominently displayed to build trust and showcase positive experiences. Additionally, a feedback section allows users to submit their reviews and ratings, enhancing community engagement.
+						The page is styled with a consistent color scheme, responsive design, and intuitive navigation, ensuring a seamless user experience </p>
+						<br>
+					<h3> Accessibility </h3>
+					    <p> Accessibility in this volunteer page is ensured through semantic HTML elements like "header", "nav", "footer" which improve screen reader compatibility. 
+						The use of descriptive "alt" text for images and clear labels for interactive elements like dropdowns and buttons enhances usability for visually impaired users. 
+						Additionally, the responsive design ensures the page is accessible across various devices and screen sizes. </p>
+						<br>
+					<h3> To go for the validation page </h3><br>
+					    <p><a href="validation_ST1.html">Link for the validation page</a></p> 
+						<br>
+					<h3> To go for the Volunteer page</h3><br>
+					    <p><a href="volunteer.html">Link for the volunteer page</a></p><br>
+			</section>
+			
+			<section>
+                <h2 id="content">Content Page</h2><br>
+				    <h3> Technical Description </h3><br>
+					    <p> The content page is designed to provide comprehensive information about Sustainable Development Goals (SDGs), with a particular focus on SDG 4: Quality Education. 
+						The page is structured using HTML and CSS, ensuring a clean and responsive layout. The navigation bar at the top allows users to easily access different sections of the website, 
+						while the sidebar provides quick links to specific parts of the content page. The main content area is divided into sections, each addressing different aspects of SDGs and SDG 4, 
+						such as their importance, targets, challenges, and global progress. The page also includes images to enhance visual appeal and understanding. A "Back to Top" button is provided for user convenience, 
+						allowing easy navigation to the top of the page. The footer contains essential links, contact information, and social media icons, along with links to the page editor profiles of the students involved in the project. 
+						This page is optimized for readability and accessibility, ensuring a seamless user experience. </p>
+						<br>
+					<h3> Accessibility </h3><br>
+					    <p> Accessibility in the content page is addressed through semantic HTML elements like "header", "section", and "aside", which improve screen reader navigation. The use of descriptive "alt" text for images and clear headings ensures content is accessible to visually impaired users. 
+						Additionally, the responsive design and high-contrast color scheme enhance readability and usability across devices. 
+						The "Back to Top" button further improves navigation for all users.</p>
+						<br>
+					<h3> To go for the validation page </h3><br>
+					    <p><a href="validation_ST1.html"> Link for the validation page </a></p>
+						<br>
+					<h3> To go for the Content page</h3><br>
+					    <p><a href="content.html">Link for the content page</a></p><br>
+			</section>
+			
+			<section>
+			        <h2 id="challenge">Challenges and Lesson learned</h2><br>
+				        <p>During the implementation of the Splash Screen, Volunteer Page, and Content Page, several challenges were encountered. 
+						For the Splash Screen, ensuring a smooth transition and accessibility during the redirection required careful use of meta tags and a loading animation. 
+						The Volunteer Page faced issues with responsive card layouts and dropdown functionality, which were resolved using flexbox and JavaScript. 
+						The Content Page struggled with organizing large amounts of information and ensuring accessibility, which was addressed through semantic HTML, ARIA labels, and a sticky sidebar for navigation.
+						These challenges emphasized the importance of mobile-first design, accessibility, and thorough testing, providing valuable lessons in creating user-friendly and inclusive web pages </p>
+			<br>
+            </section>
+			<p class="top"><a href="#top">Go top</a></p>
+			
+		</main>	    
+			
+                    
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+            <ul class="top-level-ul">
+                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+                <li>Student 1</li>
+                    <ul> 
+                        <li><a href="#splash">Splash page</a></li>
+                        <li><a href="#volunteer">Volunteer page</a></li>
+                        <li><a href="#content">Content page</a></li>
+                    </ul>
+				<li><a href="#challenge">Challenges and Lessons Learned</a></li>
+            </ul>
+        </aside>
+    </div>
+	<!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="educa_img_video/Educa.png" alt="Educa Logo" width="100">
+                <p>Educa - Education for Everyone</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="content.html">Content</a></li>
+                    <li><a href="table.html">Progress and Initiatives</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="profile.html">User Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@educa.com</p>
+                <p>Phone: +123 456 789</p>
+                <p>Location: 123 Education St, City</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><img src="educa_img_video/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="educa_img_video/x-icon.png" alt="X"></a>
+                <a href="#"><img src="educa_img_video/whatsapp-icon.png" alt="Whatsapp"></a>
+            </div>
+            <div class="footer-editor">
+                <h3>Page Editor</h3>
+                <a href="pageEditor_ST1.html">Satkunam Kriththigan</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Educa. All rights reserved.</p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educa - Feedback</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #2a9d8f; 
+            padding: 15px 10%;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #e9c46a; 
+        }
+
+        .contact {
+            color: #e76f51; 
+        }
+
+        .feedback-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .feedback-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .feedback-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem auto;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .progress-indicator::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border);
+            z-index: 1;
+        }
+
+        .step {
+            position: relative;
+            background: var(--surface);
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            z-index: 2;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .step.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feedback-form {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            animation: slideUp 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feedback-form::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        fieldset {
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        fieldset:hover {
+            box-shadow: var(--shadow-sm);
+            border-color: var(--primary-light);
+        }
+
+        legend {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .required {
+            color: #dc2626;
+            margin-left: 0.25rem;
+        }
+
+        .input-with-icon {
+            position: relative;
+        }
+
+        .textarea-container {
+            display: flex;
+        }
+
+        .input-with-icon i {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            transition: color 0.3s ease;
+            z-index: 1;
+        }
+
+        .textarea-container i {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            transform: none;
+        }
+
+        .input-with-icon input,
+        .input-with-icon textarea,
+        .select-wrapper select {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            color: var(--text);
+            background-color: var(--background);
+            transition: all 0.3s ease;
+        }
+
+        .input-with-icon textarea {
+            padding-left: 2.5rem;
+        }
+
+        .input-with-icon input:focus,
+        .input-with-icon textarea:focus,
+        .select-wrapper select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.15);
+        }
+
+        .input-with-icon input:focus+i,
+        .input-with-icon textarea:focus+i,
+        .select-wrapper:focus-within i {
+            color: var(--primary);
+        }
+
+        .input-with-icon input::placeholder,
+        .input-with-icon textarea::placeholder {
+            color: var(--text-light);
+            opacity: 0.6;
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper i {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            pointer-events: none;
+        }
+
+        .error-message {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .form-group input:invalid:not(:placeholder-shown)+i+.error-message,
+        .form-group textarea:invalid:not(:placeholder-shown)+i+.error-message {
+            display: block;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        /* Custom checkboxes */
+        .checkbox-container {
+            position: relative;
+            padding-left: 2rem;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            transition: color 0.2s ease;
+        }
+
+        .checkbox-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 1.25rem;
+            width: 1.25rem;
+            background-color: var(--background);
+            border: 2px solid var(--border);
+            border-radius: 0.25rem;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-container:hover {
+            color: var(--text);
+        }
+
+        .checkbox-container:hover .checkmark {
+            border-color: var(--primary);
+        }
+
+        .checkbox-container input:checked~.checkmark {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .checkbox-container input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .checkbox-container .checkmark:after {
+            left: 0.4rem;
+            top: 0.15rem;
+            width: 0.3rem;
+            height: 0.7rem;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        /* Custom radio buttons */
+        .radio-container {
+            position: relative;
+            padding-left: 2rem;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            transition: color 0.2s ease;
+        }
+
+        .radio-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .radio-checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 1.25rem;
+            width: 1.25rem;
+            background-color: var(--background);
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .radio-container:hover {
+            color: var(--text);
+        }
+
+        .radio-container:hover .radio-checkmark {
+            border-color: var(--primary);
+        }
+
+        .radio-container input:checked~.radio-checkmark {
+            border-color: var(--primary);
+        }
+
+        .radio-checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+            top: 50%;
+            left: 50%;
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 50%;
+            background: var(--primary);
+            transform: translate(-50%, -50%);
+        }
+
+        .radio-container input:checked~.radio-checkmark:after {
+            display: block;
+        }
+
+        .char-count {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            text-align: right;
+            transition: color 0.3s ease;
+        }
+
+        .char-count.warning {
+            color: #f59e0b;
+            font-weight: 600;
+        }
+
+        /* File upload styling */
+        .file-upload-container {
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .file-upload-input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .file-upload-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem;
+            border: 2px dashed var(--border);
+            border-radius: 0.5rem;
+            background-color: var(--background);
+            color: var(--text-light);
+            font-size: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-label i {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .file-upload-container:hover .file-upload-label {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .file-name {
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text);
+            text-align: center;
+        }
+
+        small {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .rating-section {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .rating {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .star {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            padding: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .star i {
+            transition: color 0.2s ease;
+        }
+
+        .star:hover {
+            transform: scale(1.2);
+        }
+
+        .star:hover i,
+        .star.selected i {
+            color: #facc15;
+        }
+
+        .rating-text {
+            margin-top: 0.75rem;
+            font-size: 1rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            margin-bottom: 69px;
+        }
+
+        .submit-btn {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn.primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .submit-btn.primary:hover {
+            background-color: var(--primary-dark);
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn.primary:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn.secondary {
+            background-color: var(--background);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .submit-btn.secondary:hover {
+            background-color: var(--surface);
+            border-color: var(--text-light);
+        }
+
+        
+
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .feedback-container {
+                padding: 1rem;
+                margin: 1rem;
+            }
+
+            .feedback-header h1 {
+                font-size: 2rem;
+            }
+
+            .feedback-form {
+                padding: 1.5rem 1rem;
+            }
+
+            .checkbox-group,
+            .radio-group {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .star {
+                font-size: 1.75rem;
+                padding: 0.25rem;
+            }
+
+            .step {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.75rem;
+            }
+
+            fieldset {
+                padding: 1rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .form-actions {
+                flex-direction: row;
+            }
+        }
+        
+
+    </style>
+    <style>
+        :root {
+            --primary: #0891b2;
+            --primary-dark: #0369a1;
+            --primary-light: #0ea5e9;
+            --secondary: #64748b;
+            --accent: #0284c7;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --text: #0f172a;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        /* Base Styles */
+        body {
+            background-color: var(--surface);
+            color: var(--text);
+            line-height: 1.5;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* Logo Styles */
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .logo-link:hover {
+            color: var(--primary-dark);
+        }
+
+        .logo-text {
+            display: inline-block;
+        }
+
+        .accent {
+            color: var(--accent);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar" aria-label="Main Navigation">
+            <div class="logo">Educa</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="content.html">Content</a></li>
+                <li><a href="table.html">Progress and Initiatives</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+                <li><a href="profile.html">User Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Our Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="feedback-container">
+      <section class="feedback-header">
+        <h1>Share Your Thoughts</h1>
+        <p>
+          Your feedback helps us improve our efforts towards sustainable
+          development.
+        </p>
+        <div class="progress-indicator">
+          <div class="step active">Personal Info</div>
+          <div class="step">Feedback Details</div>
+          <div class="step">Submit</div>
+        </div>
+      </section>
+
+      <form class="feedback-form" action="#" method="post" novalidate>
+        <fieldset class="personal-details">
+          <legend>
+            <i class="fas fa-user-circle"></i> Personal Information
+          </legend>
+
+          <div class="form-group">
+            <label for="name">Full Name <span class="required">*</span></label>
+            <div class="input-with-icon">
+              <i class="fas fa-user"></i>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Enter your full name"
+                title="Please enter your full name"
+              />
+            </div>
+            <span class="error-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email"
+              >Email Address <span class="required">*</span></label
+            >
+            <div class="input-with-icon">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="your.email@example.com"
+                title="Please enter a valid email address"
+              />
+            </div>
+            <span class="error-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <div class="input-with-icon">
+              <i class="fas fa-phone"></i>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[0-9]{10}"
+                placeholder="10-digit phone number (optional)"
+                title="Please enter a 10-digit phone number"
+              />
+            </div>
+            <span class="error-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <div class="input-with-icon textarea-container">
+              <i class="fas fa-home"></i>
+              <textarea
+                id="address"
+                name="address"
+                rows="3"
+                placeholder="Your address (optional)"
+              ></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="feedback-details">
+          <legend><i class="fas fa-comment-dots"></i> Feedback Details</legend>
+
+          <div class="form-group">
+            <label for="feedback-type"
+              >Type of Feedback <span class="required">*</span></label
+            >
+            <div class="select-wrapper">
+              <select id="feedback-type" name="feedback-type" required>
+                <option value="">Select feedback type</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="concern">Concern</option>
+                <option value="appreciation">Appreciation</option>
+                <option value="other">Other</option>
+              </select>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Areas of Interest</label>
+            <div class="checkbox-group">
+              <label class="checkbox-container">
+                <input type="checkbox" name="interests" value="environmental" />
+                <span class="checkbox-label">Environmental Conservation</span>
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">
+                <input type="checkbox" name="interests" value="social" />
+                <span class="checkbox-label">Social Equity</span>
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">
+                <input type="checkbox" name="interests" value="economic" />
+                <span class="checkbox-label">Economic Growth</span>
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">
+                <input type="checkbox" name="interests" value="education" />
+                <span class="checkbox-label">Sustainability Education</span>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Urgency Level</label>
+            <div class="radio-group">
+              <label class="radio-container">
+                <input type="radio" name="urgency" value="low" />
+                <span class="radio-label">Low Priority</span>
+                <span class="radio-checkmark"></span>
+              </label>
+              <label class="radio-container">
+                <input type="radio" name="urgency" value="medium" checked />
+                <span class="radio-label">Medium Priority</span>
+                <span class="radio-checkmark"></span>
+              </label>
+              <label class="radio-container">
+                <input type="radio" name="urgency" value="high" />
+                <span class="radio-label">High Priority</span>
+                <span class="radio-checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="feedback-date"
+              >Submission Date & Time <span class="required">*</span></label
+            >
+            <div class="input-with-icon">
+              <i class="fas fa-calendar"></i>
+              <input
+                type="datetime-local"
+                id="feedback-date"
+                name="feedback-date"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="attachment">Supporting Document</label>
+            <div class="file-upload-container">
+              <input
+                type="file"
+                id="attachment"
+                name="attachment"
+                accept=".pdf,.doc,.docx,.jpg,.png"
+                class="file-upload-input"
+              />
+              <label for="attachment" class="file-upload-label">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span>Choose a file or drag it here</span>
+              </label>
+              <div class="file-name"></div>
+            </div>
+            <small>Accepted formats: PDF, DOC, DOCX, JPG, PNG (max 5MB)</small>
+          </div>
+
+          <div class="form-group">
+            <label for="message"
+              >Your Feedback Message <span class="required">*</span></label
+            >
+            <div class="input-with-icon textarea-container">
+              <i class="fas fa-pencil-alt"></i>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                maxlength="500"
+                required
+                placeholder="Tell us what you think..."
+              ></textarea>
+            </div>
+            <div class="char-count">500 characters remaining</div>
+          </div>
+
+          <div class="rating-section">
+            <label>Rate Your Experience</label>
+            <div class="rating" role="group" aria-label="Rating">
+              <button
+                type="button"
+                class="star"
+                data-rating="1"
+                aria-label="1 star"
+              >
+                <i class="far fa-star"></i>
+              </button>
+              <button
+                type="button"
+                class="star"
+                data-rating="2"
+                aria-label="2 stars"
+              >
+                <i class="far fa-star"></i>
+              </button>
+              <button
+                type="button"
+                class="star"
+                data-rating="3"
+                aria-label="3 stars"
+              >
+                <i class="far fa-star"></i>
+              </button>
+              <button
+                type="button"
+                class="star"
+                data-rating="4"
+                aria-label="4 stars"
+              >
+                <i class="far fa-star"></i>
+              </button>
+              <button
+                type="button"
+                class="star"
+                data-rating="5"
+                aria-label="5 stars"
+              >
+                <i class="far fa-star"></i>
+              </button>
+            </div>
+            <div class="rating-text">Not rated yet</div>
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit" class="submit-btn primary">
+            <i class="fas fa-paper-plane"></i> Submit Feedback
+          </button>
+          <button type="reset" class="submit-btn secondary">
+            <i class="fas fa-undo"></i> Reset Form
+          </button>
+        </div>
+
+        <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-logo">
+              <img src="educa_img_video/Educa.png" alt="Educa Logo" width="100">
+              <p>Educa - Education for Everyone</p>
+          </div>
+          <div class="footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="home.html">Home</a></li>
+                  <li><a href="content.html">Content</a></li>
+                  <li><a href="table.html">Progress and Initiatives</a></li>
+                  <li><a href="volunteer.html">Volunteer</a></li>
+                  <li><a href="profile.html">User Profile</a></li>
+                  <li><a href="feedback.html">Feedback</a></li>
+                  <li><a href="team.html">Our Team</a></li>
+              </ul>
+          </div>
+          <div class="footer-contact">
+              <h3>Contact Us</h3>
+              <p>Email: info@educa.com</p>
+              <p>Phone: +123 456 789</p>
+              <p>Location: 123 Education St, City</p>
+          </div>
+          <div class="footer-social">
+              <h3>Follow Us</h3>
+              <a href="#"><img src="educa_img_video/facebook-icon.png" alt="Facebook"></a>
+              <a href="#"><img src="educa_img_video/x-icon.png" alt="X"></a>
+              <a href="#"><img src="educa_img_video/whatsapp-icon.png" alt="Whatsapp"></a>
+          </div>
+          <div class="footer-editor">
+              <h3>Page Editor</h3>
+              <a href="pageEditor_ST3.html">Nicol Fernando</a>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          <p>&copy; 2025 Educa. All rights reserved.</p>
+      </div>
+  </footer>
+  
+</body>
+</html>
+
+      </form>
+    </main>
+</body>
+</html>
+
+

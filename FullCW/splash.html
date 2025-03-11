@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educa</title>
+    <!-- Add the meta tag for automatic redirection after 4 seconds -->
+    <meta http-equiv="refresh" content="4;url=home.html">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            margin: 0;
+            background: url('educa_img_video/bg.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+            position: relative;
+            font-family: Arial, sans-serif; /* Consistent font */
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.8); /* White with transparency, matching hero-content */
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+            text-align: center;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: #e76f51; /* Coral for accent, matching hero h3 */
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 10px 0;
+            color: #2a9d8f; /* Teal for contrast, matching hero h1 */
+        }
+
+        p {
+            font-size: 16px;
+            margin: 15px 0;
+            color: #264653; /* Dark blue for text, matching hero p */
+        }
+
+        h2 {
+            font-size: 14px;
+            text-align: center;
+            color: #264653; /* Dark blue for text */
+        }
+
+        .group-members ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .group-members li {
+            font-size: 12px;
+            margin: 5px 0;
+            color: #333; /* Dark gray for text */
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* Loading animation styles */
+        .loader {
+            border: 5px solid #f3f3f3; /* Light grey */
+            border-top: 5px solid #2a9d8f; /* Teal */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+            margin: 20px auto; /* Center the loader */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="content">
+        <header>
+            <h3>Hello!</h3>
+            <h1>Welcome to Educa!</h1>
+        </header>
+        <p>Welcome to our website focused on <strong>SDG 4: Quality Education</strong>.
+            Our mission is to promote inclusive and equitable education for all. 
+            Meet our team and explore how we can work together to ensure lifelong learning opportunities for everyone. 
+            You will be redirected to the Home Page shortly.</p>
+        <div class="group-members">
+            <h2>Team Members</h2>
+            <ul>
+                <li>Sudam Pabasara</li>
+                <li>Indumina Rathnayaka</li>
+                <li>Nicol Fernando</li>
+                <li>Satkunam Kriththigan</li>
+            </ul>
+        </div>
+        <!-- Loading animation -->
+        <div class="loader"></div>
+    </div>
+</body>
+</html>

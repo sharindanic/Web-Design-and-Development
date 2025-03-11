@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="userprofile.css">
+    <link rel="stylesheet" href="main.css"> <!-- Navbar & Footer Styles -->
+  
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Educa.png" alt="Educa Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="team.html">Team</a></li>
+        </ul>
+    </nav>
+
+   
+    <div class="profile-container">
+        <!-- Profile Section -->
+        <div class="card profile-section">
+            <div class="profile-picture">
+                <img id="profile-img" src="C:\Users\ASUS\Desktop\wbcoursework\700706_people_512x512.png" alt="Profile Picture">
+                <input type="file" id="profile-upload" accept="image/*">
+                <div class="upload-label">Upload photo</div>
+            </div>
+            <input type="text" class="name-input" placeholder="Your Name">
+            <textarea class="short-bio" placeholder="Write a short bio about yourself"></textarea>
+            
+            <div class="profile-detail">
+                <span>Age:</span>
+                <input type="text" placeholder="Your age">
+            </div>
+            <div class="profile-detail">
+                <span>Work:</span>
+                <input type="text" placeholder="Your profession">
+            </div>
+            <div class="profile-detail">
+                <span>Family:</span>
+                <input type="text" placeholder="Family status">
+            </div>
+            <div class="profile-detail">
+                <span>Location:</span>
+                <input type="text" placeholder="Your location">
+            </div>
+            
+            <div class="quote-section">
+                <input type="text" class="quote-input" placeholder="A quote that captures your personality">
+            </div>
+        </div>
+
+        <!-- Goals input -->
+        <div class="card">
+            <div class="section-header">
+                <div class="icon">
+                    <img src="C:\Users\ASUS\Desktop\wbcoursework\images.png" alt="Goals Icon">
+                    
+                </div>
+                <h2>Goals</h2>
+            </div>
+            <ul class="goals-list">
+                <li>Goals 1: <input type="text" placeholder="Add your goal here"></li>
+                <li>Goals 2: <input type="text" placeholder="Add your goal here"></li>
+                <li>Goals 3: <input type="text" placeholder="Add your goal here"></li>
+                <li>Goals 4: <input type="text" placeholder="Add your goal here"></li>
+            </ul>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="card skills-section">
+            
+                <h2>Skills</h2>
+                
+            
+            
+            <div class="skill-bar">
+                <div class="skill-name">
+                    <input type="text" value="Communication" placeholder="Skill name">
+                </div>
+                <div class="skill-level">
+                    <div class="skill-percentage" style="width: 80%">
+                        <input type="number" value="70" min="0" max="100"> %
+                    </div>
+                </div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-name">
+                    <input type="text" value="Leadership" placeholder="Skill name">
+                </div>
+                <div class="skill-level">
+                    <div class="skill-percentage" style="width: 70%">
+                        <input type="number" value="65" min="0" max="100"> %
+                    </div>
+                </div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-name">
+                    <input type="text" value="Teamwork" placeholder="Skill name">
+                </div>
+                <div class="skill-level">
+                    <div class="skill-percentage" style="width: 90%">
+                        <input type="number" value="80" min="0" max="100"> %
+                    </div>
+                </div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-name">
+                    <input type="text" value="Innovation" placeholder="Skill name">
+                </div>
+                <div class="skill-level">
+                    <div class="skill-percentage" style="width: 65%">
+                        <input type="number" value="60" min="0" max="100"> %
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Frustrations Section -->
+        <div class="card">
+            <div class="section-header">
+                <div class="icon">
+                    <img src="C:\Users\ASUS\Desktop\wbcoursework\images (1).png" alt="Frustrations Icon">
+                </div>
+                <h2>Frustrations</h2>
+            </div>
+            <ul class="frustrations-list">
+                <li><input type="text" placeholder="Add frustration here"></li>
+                <li><input type="text" placeholder="Add frustration here"></li>
+            </ul>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="card">
+            <div class="section-header">
+                <div class="icon">
+                    <img src="C:\Users\ASUS\Desktop\wbcoursework\8092389.png" alt="Experience Icon">
+                </div>
+                <h2>Experience</h2>
+            </div>
+            <ul class="experience-list">
+                <li>Brief Description: <input type="text" placeholder="Add experience here"></li>
+                <li>Text Here: <input type="text" placeholder="Add details here"></li>
+                <li>Text Here: <input type="text" placeholder="Add details here"></li>
+            </ul>
+        </div>
+
+        <!-- UN Goals Section -->
+        <div class="card un-goals">
+            <div class="un-goals-title">UN goals I support</div>
+            <div class="un-goals-icons">
+                <img src="C:\Users\ASUS\Desktop\wbcoursework\SDG-goals-01.png" class="un-goal-icon" alt="SDG Goal 1">
+                <img src="C:\Users\ASUS\Desktop\wbcoursework\UN-16.png" class="un-goal-icon" alt="SDG Goal 2">
+                <img src="C:\Users\ASUS\Desktop\wbcoursework\UN-13.png" class="un-goal-icon" alt="SDG Goal 3">
+                <img src="C:\Users\ASUS\Desktop\wbcoursework\un-5.png" class="un-goal-icon" alt="SDG Goal 4">
+                <img src="C:\Users\ASUS\Desktop\wbcoursework\Un_2.png" class="un-goal-icon" alt="SDG Goal 5">
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="card">
+            <div class="section-header">
+                <div class="icon">
+                    <img src="C:\Users\ASUS\Desktop\wbcoursework\5075658.png" alt="Contact Icon">
+                </div>
+                <h2>Contact me</h2>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <h2>Contact Details</h2>
+            <table class="contact-table">
+                <tr>
+                    <th>Contact Method</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>imashaindumina1234@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>+94-771010865</td>
+                </tr>
+                <tr>
+                <td>Address</td>
+                    <td>123/1 Main Street, Matara.</td>
+                </tr>
+                <tr>
+                    <td>LinkedIn</td>
+                    <td>linkedin.com/in/imashaindumina</td>
+                </tr>
+                <tr>
+                    <td>Twitter</td>
+                    <td>@imashaindumina</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="card">
+            <div class="section-header">
+                <div class="icon">
+                    <img src="C:\Users\ASUS\Desktop\wbcoursework\images (2).png" alt="Volunteering Icon">
+                </div>
+                <h2>Volunteering availability</h2>
+            </div>
+            <form class="datetime-form">
+                <input type="text" placeholder="date">
+                <input type="email" placeholder="time">
+                <textarea placeholder="place"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+        
+    <script>
+        // JavaScript for profile image upload
+        document.getElementById('profile-upload').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-img').src = e.target.result;
+                }
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+
+        // JavaScript for skill percentage adjustment
+        document.querySelectorAll('.skill-percentage input').forEach(input => {
+            input.addEventListener('input', function() {
+                const percentage = this.value;
+                if (percentage >= 0 && percentage <= 100) {
+                    this.parentElement.style.width = percentage + '%';
+                }
+            });
+        });
+
+        // JavaScript for UN goals selection
+        document.querySelectorAll('.un-goal-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                this.classList.toggle('selected');
+            });
+        });
+    </script>
+            <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="C:\Users\ASUS\Desktop\wbcoursework\Educa.png" alt="Educa Logo" width="100">
+                <p>Educa - Education for Everyone</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@educa.com</p>
+                <p>Phone: +123 456 789</p>
+                <p>Location: 123 Education St, City</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="x-icon.png" alt="X"></a>
+                <a href="#"><img src="whatsapp-icon.png" alt="Whatsapp"></a>
+            </div>
+            <div class="footer-editor-links">
+                <a href="pageEditor_ST1.html">Page Editor - Student 1</a>
+                <a href="pageEditor_ST2.html">Page Editor - Student 2</a>
+                <a href="pageEditor_ST3.html">page Editor - student 3</a>
+                <a href="pageEditor_ST3.html">page Editor - student 4</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Educa. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+
+</body>
+</html>

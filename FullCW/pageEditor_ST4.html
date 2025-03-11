@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page editor student name - Role</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row-reverse;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        main {
+            flex: 3;
+        }
+        aside {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-right: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #fafafa;
+        }
+
+        aside a {
+            text-decoration: none;
+        }
+
+        aside li {
+            padding-bottom: 4px;
+        }
+
+        .stud {
+            text-align: center;
+            padding: 20px;
+            background-color: #f2f2f2;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+        .page-title {
+            text-align: center;
+            padding: 20px;
+            background-color: #f2f2f2;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        .top {
+            position: fixed;
+            bottom: 5%;
+            right: 5%;
+        }
+
+        .top a {
+            padding: 10px 20px; /* Adds padding for button-like feel */
+            background-color: #007bff; /* Button color */
+            color: white; /* Text color */
+            text-decoration: none; /* Removes underline */
+            border-radius: 20px; /* Rounds the corners */
+            font-size: 12px; /* Adjust font size */
+            font-weight: bold; /* Make the text stand out */
+        }
+
+        .top a:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+        }
+        .container img {
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar" aria-label="Main Navigation">
+            <div class="logo">
+                Educa
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="content.html">Content</a></li>
+                <li><a href="table.html">Progress and Initiatives</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+                <li><a href="profile.html">User Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Our Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-title">
+        <h1>Indumina Rathnayaka - Editor's Page</h1>
+    </section>
+
+    <div class="container">
+        <main>
+            <section>
+                <h2 id="userprofile">User Profile Page</h2>
+                <h3>Technical Description</h3>
+                <p>The User Profile page is designed to provide a general overview of a user's professional and personal data. The page is structured in a grid format to display content in categories such as profile data, goals, skills, frustrations, experience, and contact details.</p>
+                <p><u>HTML Structure</u>
+                    The page uses &lt;div&gt; elements with specific classes like 'profile-container', 'card', and 'profile-section' to create a modular layout. Each section is encapsulated within a 'card' class, ensuring consistency in styling and spacing.</p>
+                <br>
+                    <p><u>CSS Techniques</u>
+                    <br>
+                    Grid Layout: `profile-container` uses `display: grid` with `grid-template-columns: repeat(2, 1fr)` to create a two-column grid that allows for balanced content distribution.<br>
+                    Flexbox: Within each card, Flexbox (`display: flex`) is used to align items vertically or horizontally, such as in the `profile-section` where the profile picture, name, and bio are centered.<br>
+                    Responsive Design: The page is designed to be responsive, with elements like the profile picture and input fields adjusting to different screen sizes.<br>
+                    Interactive Elements: Hover effects and CSS transitions are used on interactive elements like the upload of the profile picture and skill bars. An example is how the `skill-percentage` class uses `width` to set the skill level dynamically based on user input.</p>
+                <p><u>Key HTML Tags</u>
+                    <br>
+                    &lt;input&gt; and &lt;textarea&gt;: Used for editable fields like name, bio, and goals, allowing users to input and update their information.<br>
+                    &lt;img&gt;: Used for displaying the profile picture and icons for goals, skills, and frustrations.<br>
+                    &lt;ul&gt; and &lt;li&gt;: Used to create lists for goals, frustrations, and experience.</p>
+                <p><u>Key CSS Properties</u>
+                    <br>
+                    'grid-template-columns': Defines the two-column layout.<br>
+                    'border-radius': Adds rounded corners to cards and images for a modern look.<br>
+                    'box-shadow': Adds depth to cards, making them stand out.<br>
+                    'transition': Used for smooth hover effects on interactive elements.</p>
+
+                <h3>Accessibility</h3>
+                <p>*Semantic HTML: The use of semantic tags like &lt;input&gt;, &lt;textarea&gt;, and &lt;img&gt; with appropriate alt attributes ensures screen readers can interpret the content.<br>
+                    *Keyboard Navigation: All interactive elements are accessible via keyboard navigation.<br>
+                    *Contrast and Readability: The color scheme ensures sufficient contrast between text and background, improving readability for users with visual impairments.</p>
+
+                <h3>To go for the validation page</h3>
+                <p><a href="validation_ST4.html#splashVal">Link for the validation page</a></p>
+
+                <h3>To go for the Splash page</h3>
+                <p><a href="">Link for the splash page.</a></p>
+            </section>
+
+            <section>
+                <h2 id="sitemap">Sitemap Page</h2>
+                <h3>Technical Description</h3>
+                <p>The Educa Sitemap page is meant to provide users with an easy and interactive visual representation of the website structure, so they can navigate easily and efficiently. The page uses SVG to generate a live map with nodes representing significant sections of the website, such as Home, Volunteer, Profile, Feedback, and Team. All nodes are clickable, which allows users to access the respective page directly. The design also has a modern and minimalist appeal, with a hover effect added to the nodes to enhance interaction. The webpage is fully responsive, with no glitches on mobile devices or others. The inclusion of SVG ensures scalability and good image quality, while JavaScript contributes functionality to interactive nodes. Besides improving usability, it also adds an interactive aspect of browsing through the website's content.</p>
+
+                <h3>Accessibility</h3>
+                <p>*Interactive Elements: The nodes are made clickable using JavaScript, ensuring that users can navigate to different pages directly from the sitemap.<br>
+                    *Text Labels: Each node has a text label, making it clear what each node represents.<br>
+                    *Keyboard Navigation: The nodes are accessible via keyboard navigation, allowing users to interact with the sitemap without a mouse.</p>
+
+                <h3>To go for the validation page</h3>
+                <p><a href="validation_ST4.html#splashVal">Link for the validation page</a></p>
+
+                <h3>To go for the Volunteer page</h3>
+                <p><a href="volunteer.html">Link for the volunteer page</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page</h2>
+                <h3>Technical Description</h3>
+                <p>The content page is designed to provide detailed information on the Sustainable Development Goals (SDGs) with special focus on SDG 4: Quality Education. The page is developed using HTML and CSS to be clean, well-organized, and responsive in structure. The primary content is divided into sections, each addressing key issues of SDG 4, such as its introduction, importance, goals, challenges, and achievements at the international level. The page also has a top navigation bar for easy access to other parts of the site, and a sidebar with quick links to some areas of the content page for enhanced user navigation. The headings and subheadings adopted provide a properly organized flow of information, and images and bullet points for improved visual appeal and readability. A inclusion of "Back to Top" to provide for ready ease in readily jumping to page top, an inclusion in footer that entails inclusion of links regarded as most needed, along with a presentation of social media and a link for accessing student participant editor page profiles are available. Accessibility and best-readibility use optimization through read-out.</p>
+
+                <h3>Accessibility</h3>
+                <p>Accessibility on the content page is prioritized through the use of semantic HTML elements such as &lt;header&gt;, &lt;section&gt;, and &lt;aside&gt;, which improve navigation for screen readers. All images include descriptive "alt" text to ensure accessibility for visually impaired users. The page features a high-contrast color scheme and responsive design, making it easy to read and navigate on various devices. The inclusion of a "Back to Top" button further enhances usability, allowing users to quickly return to the top of the page without excessive scrolling. These features ensure that the content is accessible and user-friendly for all audiences.</p>
+
+                <h3>To go for the validation page</h3>
+                <p><a href="validation_ST1.html#splashVal">Link for the validation page</a></p>
+
+                <h3>To go for the Content page</h3>
+                <p><a href="content.html">Link for the content page</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge">Challenges and Lessons Learned</h2>
+                <p>While creating the Sitemap and User Profile pages, there were some problems encountered. For the Sitemap, creating an interactive and responsive SVG-based map required a lot of planning and testing. Creating the nodes clickable and visually appealing on different devices was a major problem, which was solved by using a combination of SVG, CSS, and JavaScript. The User Profile page was having trouble with handling a responsive grid layout and ensuring all interactive elements, such as the upload of the profile image and setting the skill percentages, were working well. This was addressed through the use of CSS Grid and Flexbox for layout and JavaScript for interactivity.</p>
+                <p>The other challenge was to make accessibility available for both pages. It was more difficult for the Sitemap to include text labels on nodes and make them screen-reader accessible and keyboard-navigable. For the User Profile, making all input fields and interactive elements accessible to both screen readers and keyboard users was imperative. These challenges made it obvious how much weight should be placed on mobile-first design, accessibility best practices, and thorough testing across diverse devices and browsers.</p>
+            </section>
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+            <ul class="top-level-ul">
+                <li>Student 4</li>
+                <ul>
+                    <li><a href="#userprofile">User Profile Page</a></li>
+                    <li><a href="#sitemap">Sitemap Page</a></li>
+                    <li><a href="#content">Content Page</a></li>
+                </ul>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="educa_img_video/Educa.png" alt="Educa Logo" width="100">
+                <p>Educa - Education for Everyone</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="content.html">Content</a></li>
+                    <li><a href="table.html">Progress and Initiatives</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="profile.html">User Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@educa.com</p>
+                <p>Phone: +123 456 789</p>
+                <p>Location: 123 Education St, City</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><img src="educa_img_video/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="educa_img_video/x-icon.png" alt="X"></a>
+                <a href="#"><img src="educa_img_video/whatsapp-icon.png" alt="Whatsapp"></a>
+            </div>
+            <div class="footer-editor">
+                <h3>Page Editor</h3>
+                <a href="pageEditor_ST4.html">Indumina Rathnayaka</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Educa. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
