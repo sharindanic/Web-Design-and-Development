@@ -1,0 +1,225 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2a9d8f; /* Teal from Educa logo */
+    padding: 15px 10%;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    color: #e9c46a; /* Yellow for hover */
+}
+
+.contact {
+    color: #e76f51; /* Coral for contrast */
+}
+
+/* Middle box Section */
+.middlebox {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(14, 13, 13);
+    padding: 20px;
+    overflow: hidden; /* Ensure video doesn't overflow */
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the entire section */
+    z-index: -1; /* Places video behind the content */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    z-index: 0; /* Places overlay between video and content */
+}
+
+.middle-box-content {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.8); /* White with transparency */
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1; /* Ensures content is above the video and overlay */
+}
+
+.middlebox h3 {
+    font-size: 20px;
+    color: #e76f51; /* Coral for accent */
+}
+
+.middlebox h1 {
+    font-size: 36px;
+    margin: 10px 0;
+    color: #2a9d8f; /* Teal for contrast */
+}
+
+.middlebox img {
+    width: 200px;
+    height: 200px;
+    margin: 20px 0; /* Add spacing around the logo */
+}
+
+.hero p {
+    font-size: 16px;
+    margin: 15px 0;
+    color: #264653; /* Dark blue for text */
+}
+/* Content Links Section */
+.content-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background: #f4f4f4; /* Light background for contrast */
+}
+
+.content-card {
+    text-decoration: none;
+    color: #264653; /* Dark blue for text */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 20px;
+    width: 200px; /* Fixed width for consistency */
+}
+
+.content-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.content-card img {
+    width: 100px; /* Adjusted image size */
+    height: 100px; /* Adjusted image size */
+    margin-bottom: 15px;
+    border-radius: 50%; /* Circular images */
+    object-fit: cover; /* Ensures images are not distorted */
+}
+
+.content-card h3 {
+    font-size: 18px;
+    margin: 0;
+    color: #2a9d8f; /* Teal for headings */
+}
+/* Footer */
+.footer {
+    background: #264653; /* Dark blue from Educa logo */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo img {
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #e9c46a; /* Yellow for hover */
+}
+
+.footer-contact {
+    color: white;
+}
+
+.footer-contact h3 {
+    color: #e9c46a; /* Yellow for headings */
+}
+
+.footer-social a img {
+    width: 30px;
+    margin: 5px;
+}
+
+.footer-editor h3 {
+    color: #e9c46a; /* Yellow for headings */
+}
+
+.footer-editor a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-editor a:hover {
+    color: #e9c46a; /* Yellow for hover */
+}
+
+
+.footer-bottom {
+    background: #1d3557; /* Darker blue for footer bottom */
+    padding: 15px;
+    margin-top: 20px;
+    color: white;
+}

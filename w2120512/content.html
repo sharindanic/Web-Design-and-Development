@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educa - Content</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .content-section {
+            display: flex;
+            padding: 40px 20px;
+            background: #f4f4f4;
+        }
+        .sidebar {
+            width: 250px;
+            background: #2a9d8f;
+            padding: 20px;
+            color: white;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+            border-radius: 10px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .content-container {
+            flex-grow: 1;
+            max-width: 900px;
+            margin-left: 20px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1, h2 {
+            color: #2a9d8f;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .image {
+            width: 100%;
+            max-height: auto;
+            object-fit: cover;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .back-to-top {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2a9d8f; /* Blue background */
+            color: white; /* White text */
+            text-decoration: none; /* Remove underline */
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px; /* Rounded corners */
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-to-top:hover {
+             background-color: #0056b3; /* Darker blue on hover */
+        }
+        .footer-editor ul {
+            list-style-type: none; /* Remove bullet points */
+            padding-left: 0; /* Remove default padding */
+        }
+
+        .footer-editor ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-editor ul li a:hover {
+            color: #e9c46a; /* Yellow for hover */
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar" aria-label="Main Navigation">
+            <div class="logo">Educa</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="content.html">Content</a></li>
+                <li><a href="table.html">Progress and Initiatives</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+                <li><a href="profile.html">User Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="team.html">Our Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content-section">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#SDG's">What are the Sustainable Development Goals (SDGs)?</a></li>
+                <br>
+                <li><a href="#introduction">Introduction to SDG 4</a></li>
+                <br>
+                <li><a href="#importance">Importance of Quality Education</a></li>
+                <br>
+                <li><a href="#targets">Targets and Indicators</a></li>
+                <br>
+                <li><a href="#countries">Quality Education in Different Countries</a></li>
+                <br>
+                <li><a href="#challenges">Challenges in Achieving SDG 4</a></li>
+                <br>
+                <li><a href="#progress">Progress and Initiatives</a></li>
+                <br>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </aside>
+
+        <div class="content-container">
+            <h2 id="SDG's">What are the Sustainable Development Goals (SDGs)?</h2>
+            <img src="educa_img_video/sdg.png" alt="SDG Banner" class="image">
+            <p>The Sustainable Development Goals (SDGs) are a set of 17 global goals adopted by all United Nations (UN) member states in 2015 as part of the 2030 Agenda for Sustainable Development. These goals aim to address global challenges such as poverty, inequality, climate change, environmental degradation, peace, and justice.</p>
+            <br>
+            <p><strong>No Poverty:</strong> End poverty in all its forms everywhere.</p>
+            <br>
+            <p><strong>Zero Hunger:</strong> End hunger, achieve food security, and promote sustainable agriculture.</p>
+            <br>
+            <p><strong>Good Health and Well-being:</strong> Ensure healthy lives and promote well-being for all ages.</p>
+            <br>
+            <p><strong>Quality Education:</strong> Ensure inclusive and equitable quality education.</p>
+            <br>
+            <p><strong>Gender Equality:</strong> Achieve gender equality and empower all women and girls.</p>
+            <br>
+            <p><strong>Clean Water and Sanitation:</strong> Ensure availability and sustainable management of water and sanitation.</p>
+            <br>
+            <p><strong>Affordable and Clean Energy:</strong> Ensure access to sustainable and modern energy for all.</p>
+            <br>
+            <p><strong>Decent Work and Economic Growth:</strong> Promote sustained, inclusive economic growth and productive employment.</p>
+            <br>
+            <p><strong>Industry, Innovation, and Infrastructure:</strong> Build resilient infrastructure and promote sustainable industrialization.</p>
+            <br>
+            <p><strong>Reduced Inequalities:</strong> Reduce inequality within and among countries.</p>
+            <br>
+            <p><strong>Sustainable Cities and Communities:</strong> Make cities and human settlements inclusive and sustainable.</p>
+            <br>
+            <p><strong>Responsible Consumption and Production:</strong> Ensure sustainable consumption and production patterns.</p>
+            <br>
+            <p><strong>Climate Action:</strong> Take urgent action to combat climate change.</p>
+            <br>
+            <p><strong>Life Below Water:</strong> Conserve and sustainably use the oceans, seas, and marine resources.</p>
+            <br>
+            <p><strong>Life on Land:</strong> Protect, restore, and promote sustainable ecosystems and biodiversity.</p>
+            <br>
+            <p><strong>Peace, Justice, and Strong Institutions:</strong> Promote peaceful and inclusive societies for sustainable development.</p>
+            <br>
+            <p><strong>Partnerships for the Goals:</strong> Strengthen global partnerships for sustainable development.</p>
+            <br>
+
+            <h2 id="introduction">Introduction to SDG 4</h2>
+            <img src="educa_img_video/sdg4.png" alt="SDG 4 Banner" class="image">
+            <p>Sustainable Development Goal 4 (SDG 4) focuses on ensuring inclusive and equitable quality education and promoting lifelong learning opportunities for all. Established by the United Nations as part of the 2030 Agenda for Sustainable Development, SDG 4 aims to eliminate disparities in education and improve learning outcomes worldwide. This report explores the importance, challenges, and progress of achieving quality education globally.</p>
+            <br>
+
+            <h2 id="importance">Importance of Quality Education</h2>
+            <img src="educa_img_video/education-benefits.jpg" alt="Importance of Education" class="image">
+            <p>Education is a fundamental human right and a crucial driver of social and economic development. Quality education empowers individuals, reduces poverty, promotes gender equality, and fosters sustainable growth. Key benefits of quality education include:</p>
+            <br>
+            
+                <P>1. Improved employment opportunities and economic development.</p>
+                <P>2. Enhanced civic participation and democratic governance.</p>
+                <P>3. Reduction of inequalities and social injustices.</p>
+                <p>4. Promotion of innovation and technological advancement.</P>
+            
+            <br>
+
+            <h2 id="targets">Targets and Indicators of SDG 4</h2>
+            <img src="educa_img_video/sdg-targets.png" alt="SDG 4 Targets" class="image">
+            <p>SDG 4 comprises several targets designed to address various aspects of education. Some key targets include:</p> 
+            <br>
+            <p>4.1: Ensure that all children complete free, equitable, and quality primary and secondary education.</p>
+            <p>4.2: Provide access to quality early childhood development and pre-primary education.</p>
+            <p>4.3: Ensure equal access to affordable and quality technical, vocational, and tertiary education.
+            <p>4.4: Increase the number of youth and adults with relevant skills for employment and entrepreneurship.</p>
+            <p>4.5: Eliminate gender disparities and ensure equal education access for vulnerable populations.</p>
+            <p>4.6: Ensure all youth and adults achieve literacy and numeracy.</p>
+            <p>4.7: Promote sustainable development education, including global citizenship and cultural awareness.</p>
+            <br>
+
+            <h2 id="countries">Quality Education in Different Countries</h2>
+            <img src="educa_img_video/global-education.png" alt="Education Around the World" class="image">
+            <p>Several countries have made significant progress in providing high-quality education systems. Some of the top-performing countries in education include:</p>
+            <br>
+            <p><strong>Finland:</strong> Known for its student-centered approach, highly trained teachers, and minimal standardized testing, Finland consistently ranks among the best education systems globally.</p>
+            <p><strong>Singapore:</strong> Focuses on a rigorous curriculum, innovative teaching methods, and strong government support to produce top-performing students.</p>
+            <p><strong>Canada:</strong> Offers high-quality education with strong public school systems, equitable access, and a diverse curriculum.</p>
+            <p><strong>Japan:</strong> Prioritizes discipline, high academic standards, and a strong work ethic in its education system.</p>
+            <p><strong>Korea:</strong> Has a highly competitive education system with an emphasis on STEM fields and academic excellence.</p>
+            <p><strong>Netherlands:</strong> Offers a balanced curriculum with a focus on creativity, innovation, and student well-being.</p>
+            <p><strong>Germany:</strong> Provides a strong vocational training system alongside traditional academic education, ensuring job readiness for students.</p>
+            <p><strong>Sri Lanka:</strong> Offers free education from primary to university level, contributing to high literacy rates. The country has a strong emphasis on public education, though challenges such as resource limitations and rural-urban disparities persist.</p>
+            <br>
+            <p>These countries have achieved success through well-funded education systems, skilled teachers, and policies that emphasize equality and innovation.</p>
+            <br>
+
+            <h2 id="challenges">Challenges in Achieving SDG 4</h2>
+            <img src="educa_img_video/education-challenges.png" alt="Challenges in Education" class="image">
+            <p>Despite progress, several challenges hinder the achievement of SDG 4, including:</p>
+            <br>
+            <p><strong>Access and Affordability:</strong> Many children, particularly in low-income countries, lack access to education due to poverty, conflict, and geographical barriers.</p>
+            <P><strong>Quality of Education:</strong> Inadequate infrastructure, outdated curricula, and insufficient teacher training affect learning outcomes.</P>
+            <p><strong>Gender Disparities:</strong> Girls in many regions face obstacles such as early marriage, cultural norms, and discrimination.</p>
+            <p><strong>Technological Divide:</strong> The digital gap limits access to online education and learning resources in underdeveloped areas.</p>
+            <p><strong>Impact of COVID-19:</strong> The pandemic disrupted education globally, increasing learning losses and school dropouts.</P>
+            <br>
+            
+            <h2 id="progress">Progress and Initiatives</h2>
+            <img src="educa_img_video/education-progress.jpg" alt="Education Progress" class="image">
+            <p>Governments, international organizations, and non-profits are implementing policies and initiatives to advance SDG 4. Some notable efforts include:</p>
+            <br>
+            <p><strong>UNESCO’s Global Education Monitoring Report:</strong>Tracks progress and highlights best practices.</p>
+            <P><strong>Education for All (EFA) Initiative:</strong>Promotes universal primary education and gender equality. </P>
+            <p><strong>Digital Learning Programs: </strong> Expanding access through online platforms and low-cost educational technology.</p>
+            <p><strong>Scholarships and Financial Aid:</strong> Supporting students from disadvantaged backgrounds.</p>
+            <p><strong>Public-Private Partnerships: </strong>Collaborations between governments and businesses to enhance education infrastructure and resources. </P>
+            <br>
+            
+            <h2 id="conclusion">Conclusion</h2>
+            <img src="educa_img_video/conclution.jpg" alt="Conclusion" class="image">
+            <p>SDG 4 is vital for creating a more equitable and sustainable world. While significant progress has been made, continued efforts are needed to overcome persistent challenges. Governments, educators, and stakeholders must work collaboratively to ensure </p>
+            <br>
+
+            <a href="#top" class="back-to-top">Back to Top</a>
+        </div>
+    </section>
+               <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="educa_img_video/Educa.png" alt="Educa Logo" width="100">
+                <p>Educa - Education for Everyone</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="content.html">Content</a></li>
+                    <li><a href="table.html">Progress and Initiatives</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="profile.html">User Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@educa.com</p>
+                <p>Phone: +123 456 789</p>
+                <p>Location: 123 Education St, City</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><img src="educa_img_video/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="educa_img_video/x-icon.png" alt="X"></a>
+                <a href="#"><img src="educa_img_video/whatsapp-icon.png" alt="Whatsapp"></a>
+            </div>
+            <div class="footer-editor">
+                <h3>Page Editors</h3>
+                <ul>
+                    <li><a href="pageEditor_ST1.html">Satkunam Kriththigan</a></li>
+                    <li><a href="pageEditor_ST2.html">Sudam Pabasara</a></li>
+                    <li><a href="pageEditor_ST3.html">Nicol Fernando</a></li>
+                    <li><a href="pageEditor_ST4.html">Indumina Rathnayaka</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Educa. All rights reserved.</p>
+        </div>
+    </footer>          
+</body>
+</html>
